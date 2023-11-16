@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    {{movies.name}}<br>
+    {{movies.desc}}<br>
+    {{movies.year}}<br>
+    <img src="{{movies.image.url}}" width="100" height="100">
+</center>
+</body>
+</html>
+{% endblock %}

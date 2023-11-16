@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        Do You Want To Delete?
+        <input type="submit" value="yes" class="btn btn-danger">
+        <a href="{% url 'movie_app:movie_first_fun' %}" class="btn btn-primary">NO</a>
+    </form>
+</center>
+</body>
+</html>
+{% endblock %}

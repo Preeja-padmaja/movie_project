@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<br>
+<br>
+<table border="2" align="center" >
+    <thead>
+        <th width="100px" align="center">ID</th>
+        <th width="100px" align="center">NAME</th>
+        <th width="100px" align="center">DESC</th>
+        <th width="100px" align="center">YEAR</th>
+        <th width="100px" align="center">IMAGE</th>
+        <th width="100px" align="center">ACTION</th>
+    </thead>
+    <tbody>
+    {% for i in values %}
+    <tr>
+        <td align="center">{{i.id}}</td>
+        <td align="center"><a href="{% url 'movie_app:detail_view' i.id %}">{{i.name}}</td>
+        <td align="center">{{i.desc}}</td>
+        <td align="center">{{i.year}}</td>
+        <td align="center"><img src="{{i.image.url}}" width="100" height="100"</td>
+        <td>
+            <a class="btn btn-warning" href="{% url 'movie_app:update' i.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'movie_app:delete' i.id %}">Delete</a>
+        </td>
+    </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+<h4 align="center"> <a  href="{% url 'movie_app:add_movie' %}">ADD NEW FIELDS</a></h4>
+</body>
+</html>
+{% endblock %}
